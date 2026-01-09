@@ -4,9 +4,11 @@ const send_Statuts = document.getElementById('status');
 
 button.addEventListener('click', async () => {
     const song = input.value;
+
+    const PUBLIC_IP = "181.237.206.110";
     if (song) {
         try{
-            const response = await fetch('http://127.0.0.1:5000/request-song', {
+            const response = await fetch(`http://${PUBLIC_IP}:2323/request-song`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ song: song })
