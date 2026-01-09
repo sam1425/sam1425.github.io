@@ -1,6 +1,6 @@
 const button = document.getElementById('sendBtn');
 const input = document.getElementById('musicInput');
-const send_Statuts = document.getElementById('status');
+const send_Status = document.getElementById('status');
 
 button.addEventListener('click', async () => {
     const song = input.value;
@@ -16,14 +16,14 @@ button.addEventListener('click', async () => {
 
         const result = await response.json();
 
-        send_Statuts.innerText = `¡Añadido! ${result.message}`;
+        send_Status.innerText = `¡Añadido! ${result.message}`;
         input.value = '';
         } catch (error){
             send_Status.innerText = "Error: El servidor no responde.";
             console.error("Fetch error:", error);
         }
     } else {
-        send_Statuts.innerText = "Por favor, escribe algo primero.";
+        send_Status.innerText = "Por favor, escribe algo primero.";
     }
 });
 
