@@ -19,7 +19,7 @@ button.addEventListener('click', async () => {
         send_Statuts.innerText = `¡Añadido! ${result.message}`;
         input.value = '';
         } catch (error){
-            statusDisplay.innerText = "Error: El servidor no responde.";
+            send_Status.innerText = "Error: El servidor no responde.";
             console.error("Fetch error:", error);
         }
     } else {
