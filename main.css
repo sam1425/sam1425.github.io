@@ -1,0 +1,85 @@
+@font-face
+{
+    font-family: 'sans';
+    src: url('fonts/ComicShannsMono-Regular.otf') format('opentype');
+}
+:root {
+  --outline: #22c0c0;
+}
+
+body
+{
+  display: flex;
+  font-family: sans;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+#textbox
+{
+    display: flex;
+    font-family: inherit;
+    flex-direction: row;
+    align-items: center;
+    width: 90vw;
+    max-width: 800px;
+    gap: 8px;
+}
+
+#textbox input {
+    flex: 1;
+    box-sizing: border-box;
+    font-family: inherit;
+    padding: 10px 12px;
+    height: 48px;
+    border: 2px solid #000;
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+    outline: outset;
+}
+
+#textbox button {
+    box-sizing: border-box;
+    padding: 10px 16px;
+    height: 48px;
+    min-width: 64px;
+    border: 1px solid var(--outline);
+    background: #007bff;
+    color: #fff;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    outline: outset;
+    outline-color: blue;
+}
+
+#textbox input
+{
+    transition: border-color .15s ease, box-shadow .15s ease, background-color .12s ease;
+}
+#textbox button {
+    align-items: center;
+    transition: border-color .15s ease, box-shadow .15s ease, background-color .12s ease;
+    font-size: 2rem;
+    padding: 0
+}
+
+#textbox input:focus,
+#textbox input:focus-visible {
+    outline: none;
+    border-color: var(--outline);
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.13);
+}
+
+#textbox button:focus,
+#textbox button:focus-visible,
+#textbox button:active {
+    border-color: var(--outline);
+    box-shadow: 0 0 0 4px rgba(0,123,255,0.13);
+}
+
+#textbox button:active {
+    background: #000;
+    transform: scale(0.95);
+}
